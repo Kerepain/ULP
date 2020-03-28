@@ -23,8 +23,9 @@ co:
    syn._PLE=0x01;
    pack ->_TYPE =0x00;
    pack->_DATA[0] = syn._PLE;
+   Sleep(1000);
    sendto(fd,&pack,2,0,(struct sockaddr*)&endport,&len);
-   int count = recvfrom(fd,*buf,MTU,0,&src,&len);
+   int count = recvfrom(fd,*buf,MTU,MSG_DONTWAIT,&src,&len);
    pack = buf;
     if (pack->_TYPE == 0x00&&pack->_DATA[0] == 0x01)
     {
