@@ -1,9 +1,6 @@
 #include<stdio.h>
 #include"Pack.h"
-  
- enum TYPE{
- SYN, ACK,PSH,KEEPCONNECT,INIT,RST,
- }type ;
+
 typedef struct Pack
 {
     char _TYPE;
