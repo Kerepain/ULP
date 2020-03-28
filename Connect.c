@@ -25,7 +25,7 @@ co:
    pack->_DATA[0] = syn._PLE;
    sendto(fd,&pack,2,0,(struct sockaddr*)&endport,&len);
    int count = recvfrom(fd,*buf,MTU,0,&src,&len);
-   pack =  buf;
+   pack = buf;
     if (pack->_TYPE == 0x00&&pack->_DATA[0] == 0x01)
     {
         connected=1;
