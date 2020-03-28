@@ -7,16 +7,14 @@
 #include"Connect.h"
 #include "Connect.c"
 
-int CONNECTED;
-
- int Connect(struct sockaddr_in endport);
+int Connect(struct sockaddr_in endport);
 
 int DisConnect(){
 
 }
 
 int send(char *buf,int fd){
-     if (CONNECTED)
+     if (connect)
      {
         
      }
