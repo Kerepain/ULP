@@ -7,28 +7,34 @@ typedef struct Pack
     char _DATA[MTU - 1];
 };
 
+//0x00
 typedef struct SYN
 {
    char _PLE;
 };
+//0x01
 typedef struct ACK
 {
    char _OK;
 };
+//0x02
 typedef struct PSH
 {
-   char _NUB[2];
-   char _DATA[MTU - 3];
+   char _NUB;
+   char _DATA[MTU - 2];
 };
+//0x03
 typedef struct KEEPCONNECT
 {
     char _CHEAK;
 };
+//0x04
 typedef struct INIT
 {
     char _BUFF_LEN[16];
     char _QUANTITY[16];
 };
+//0x05
 typedef struct RST
 {
      char rst;
