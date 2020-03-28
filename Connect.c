@@ -1,15 +1,15 @@
 #include<stdio.h>
 #include<sys/socket.h>
 #include<sys/types.h>
-#include <netinet/in.h>
-#include <string.h>
+#include<netinet/in.h>
+#include<string.h>
 #include"Connect.h"
-#include "Pack.h"
+#include"Pack.h"
 #include"Pack.c"
 struct Pack *pack;
 struct SYN syn;
 int fd;
-socklen_t  len;
+socklen_t len;
 char *buf [MTU];
 struct sockaddr_in src;
 int connected;
