@@ -55,14 +55,16 @@ co:
 }
 
 char buffer[MTU];
-struct Pack *keep;
+struct Pack keep;
+struct Pack *keeps;
 struct Pack *cheak;
 void KeepConnect(void *ufds)
     {
        struct UFD *ufd ;
        ufd = ufds;
-      keep ->_TYPE =0x03;
-      keep->_DATA [0]=0x01;
+      keep._TYPE =0x03;
+      keep._DATA [0]=0x01;
+      keeps = &keep;
       memset(buffer,0,MTU);
       int ret = 0;
       while (1)
@@ -70,7 +72,7 @@ void KeepConnect(void *ufds)
          Sleep(1000);
          for(size_t i = 0;i != 5;i++)
          {
-         sendto(ufd->fd,keep,2,0,(struct sockaddr *)&ufd->EndPort,&len);
+         sendto(ufd->fd,keeps,2,0,(struct sockaddr *)&ufd->EndPort,&len);
          }
           if(recvfrom(ufd->fd,&buffer,MTU,MSG_DONTWAIT,&src,&len) == -1 || ret == 5){
               close(ufd->fd);
