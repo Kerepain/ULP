@@ -56,7 +56,6 @@ co:
 
 char buffer[MTU];
 struct Pack keep;
-struct Pack *keeps;
 struct Pack *cheak;
 void KeepConnect(void *ufds)
     {
@@ -72,7 +71,7 @@ void KeepConnect(void *ufds)
          Sleep(1000);
          for(size_t i = 0;i != 5;i++)
          {
-         sendto(ufd->fd,keeps,2,0,(struct sockaddr *)&ufd->EndPort,&len);
+         sendto(ufd->fd,&keep,2,0,(struct sockaddr *)&ufd->EndPort,&len);
          }
           if(recvfrom(ufd->fd,&buffer,MTU,MSG_DONTWAIT,&src,&len) == -1 || ret == 5){
               close(ufd->fd);
