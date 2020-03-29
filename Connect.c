@@ -12,7 +12,6 @@ int fd;
 socklen_t len;
 char *buf [MTU];
 struct sockaddr_in src;
-int connected;
 int re;
 
 int Connect(struct sockaddr_in endport)
@@ -29,7 +28,6 @@ co:
    pack = buf;
     if (pack->_TYPE == 0x00&&pack->_DATA[0] == 0x01)
     {
-        connected=1;
         return fd;
     }
     else
