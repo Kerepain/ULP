@@ -14,15 +14,6 @@ int DisConnect(){
 }
 
 int send(char *buf,int fd){
-     if (connect)
-     {
-        
-     }
-     else
-     {
-         return -1;
-     }
-     
      
 }
 
