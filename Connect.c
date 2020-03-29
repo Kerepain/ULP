@@ -9,6 +9,7 @@
 #include"Pack.h"
 #include"Pack.c"
 struct Pack *pack;
+struct Pack packs
 struct SYN syn;
 int fd;
 socklen_t len;
@@ -22,8 +23,9 @@ co:
    fd = socket(AF_INET,SOCK_DGRAM,0);
    memset(buf,0,MTU);
    syn._PLE=0x01;
-   pack ->_TYPE =0x00;
-   pack->_DATA[0] = syn._PLE;
+   packs._TYPE =0x00;
+   packs._DATA[0] = syn._PLE;
+   pack = &packs;
    Sleep(1000);
    sendto(fd,pack,2,0,(struct sockaddr*)&endport,&len);
    int count = recvfrom(fd,&buf,MTU,MSG_DONTWAIT,&src,&len);
