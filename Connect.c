@@ -75,7 +75,11 @@ void KeepConnect(void *ufds)
               break;
           }
         cheak =  &buffer; 
-         if(cheak->_TYPE = 0x05 && cheak->_DATA = 0x01)close(ufd->fd);
+         if(cheak->_TYPE = 0x05 && cheak->_DATA = 0x01)
+         {
+            close(ufd->fd);
+            break;
+         }
         if (cheak->_TYPE = 0x03 && cheak->_DATA  != 0x00)
         {
             ret == 0;
