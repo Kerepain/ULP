@@ -70,11 +70,12 @@ void KeepConnect(void *ufds)
          {
          sendto(ufd->fd,keep,2,0,(struct sockaddr *)&ufd->EndPort,&len);
          }
-          if(recvfrom(fd,&buffer,MTU,MSG_DONTWAIT,&src,&len) == -1 || ret == 5){
-              close(fd);
+          if(recvfrom(ufd->fd,&buffer,MTU,MSG_DONTWAIT,&src,&len) == -1 || ret == 5){
+              close(ufd->fd);
               break;
           }
         cheak =  &buffer; 
+         if(cheak->_TYPE = 0x05 && cheak->_DATA = 0x01)close(ufd->fd);
         if (cheak->_TYPE = 0x03 && cheak->_DATA  != 0x00)
         {
             ret == 0;
