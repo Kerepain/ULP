@@ -1,2 +1,2 @@
-int Connect(struct sockaddr_in);
+char *Connect(struct sockaddr_in);
 int connect;

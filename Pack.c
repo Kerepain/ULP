@@ -31,6 +31,7 @@ typedef struct KEEPCONNECT
 //0x04
 typedef struct INIT
 {
+    char _NUB;
     char _BUFF_LEN[16];
     char _QUANTITY[16];
 };
@@ -40,3 +41,8 @@ typedef struct RST
      char rst;
 };
 
+typedef struct  UFD
+{
+    int fd;
+    struct sockaddr_in EndPort;
+};
